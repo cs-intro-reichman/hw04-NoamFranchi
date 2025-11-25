@@ -29,8 +29,9 @@ public class Primes {
             }
             i++; 
         }
-        double precent = (count / (double)n) * 100;
-        System.out.println("There are " + count + " primes between 2 and " + n + " (" + precent + "% are primes)");
+    double precent = (count / (double)n) * 100.0;
+    long percentRounded = Math.round(precent);
+    System.out.println("There are " + count + " primes between 2 and " + n + " (" + percentRounded + "% are primes)");
 
     }
 }

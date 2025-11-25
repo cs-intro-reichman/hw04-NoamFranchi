@@ -1,0 +1,9 @@
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+public class TesterArrayCharOps {
+    @Test
+    public void testExample() {
+        assertTrue(true);
+    }
+}
