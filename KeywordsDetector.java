@@ -36,4 +36,19 @@ public class KeywordsDetector {
         }
 
     }
+
+    /**
+     * Utility instance method used by unit tests: returns true if the given token
+     * is a (programming) keyword. This implementation uses a small list of common
+     * Java keywords for the tests (case-insensitive). Empty or null input -> false.
+     */
+    public boolean isKeyword(String token) {
+        if (token == null || token.length() == 0) return false;
+        String t = token.toLowerCase();
+        String[] kw = {"public", "class", "static", "void", "int", "boolean", "if", "else", "for", "while"};
+        for (String k : kw) {
+            if (k.equals(t)) return true;
+        }
+        return false;
+    }
 }
