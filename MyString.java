@@ -26,7 +26,7 @@ public class MyString {
                 arr[i] = str.charAt(i);
             }
         }
-       String newStr = String.valueOf(arr);
+        String newStr = String.valueOf(arr);
 
         return newStr;
     }

@@ -22,14 +22,11 @@ public class KeywordsDetector {
     // If a sentence contains one or more of the kewords, prints it.
     public static void detectAndPrint(String[] sentences, String[] keywords) {
         for (int i = 0; i < sentences.length; i++) {
-            // keep the original sentence for printing, use lowercase for comparison
-            String sentenceOriginal = sentences[i];
-            String sentenceLower = sentenceOriginal.toLowerCase();
+            String sentenceLower = sentences[i].toLowerCase();
             for (int j = 0; j < keywords.length; j++) {
                 String keywordLower = keywords[j].toLowerCase();
-                if (MyString.contains(sentenceLower, keywordLower)) {
-                    System.out.println(sentenceOriginal);
-                    // print each sentence only once
+                if (sentenceLower.contains(keywordLower)) {
+                    System.out.println(sentences[i]);
                     break;
                 }
             }
@@ -37,18 +34,5 @@ public class KeywordsDetector {
 
     }
 
-    /**
-     * Utility instance method used by unit tests: returns true if the given token
-     * is a (programming) keyword. This implementation uses a small list of common
-     * Java keywords for the tests (case-insensitive). Empty or null input -> false.
-     */
-    public boolean isKeyword(String token) {
-        if (token == null || token.length() == 0) return false;
-        String t = token.toLowerCase();
-        String[] kw = {"public", "class", "static", "void", "int", "boolean", "if", "else", "for", "while"};
-        for (String k : kw) {
-            if (k.equals(t)) return true;
-        }
-        return false;
-    }
+    
 }
